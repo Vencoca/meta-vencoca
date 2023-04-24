@@ -1,5 +1,5 @@
 # short-description: Create btrfs-partition
-# long-description: Create btrfs-partition for data
+# long-description: Create btrfs-partition for data, root fs with ext4 and boot partition with type vfat
 
 
 part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 20

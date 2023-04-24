@@ -1,0 +1,8 @@
+[Unit]
+Description=Measuring service
+
+[Service]
+ExecStart=/usr/bin/measure
+
+[Install]
+WantedBy=multi-user.target
