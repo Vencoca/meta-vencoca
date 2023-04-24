@@ -1,0 +1,10 @@
+# short-description: Create btrfs-partition
+# long-description: Create btrfs-partition for data
+
+# part /boot --source bootimg-pcbios --ondisk sda --label boot --active --align 1024
+# part / --source rootfs --use-uuid --fstype=ext4 --label platform --align 1024
+
+part /boot --source bootimg-partition --ondisk mmcblk0 --fstype=vfat --label boot --active --align 4096 --size 20
+part / --source rootfs --ondisk mmcblk0 --fstype=ext4 --label root --align 4096
+part /btrfs --size 512 --fstype=btrfs --label data --align 1024
+# bootloader  --timeout=0  --append="rw oprofile.timer=1 rootfstype=ext4 "
